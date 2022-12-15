@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Proyecto</title>
+  </head>
+  <body>
+    <section class="proyecto">
+      <div class="buttons">
+        <div class="captacion">
+          <ul class="wrapper">
+            <li onclick="nextStepCaptation()" class="icon facebook">
+              <span class="tooltip">t2</span>
+              <span>t2</span>
+            </li>
+            <li onclick="lastStepCaptation()" class="icon twitter">
+              <span class="tooltip">t3</span>
+              <span>t3</span>
+            </li>
+          </ul>
+          <button class="funcion" onclick="captacion()">CAPTACIÓN</button>
+        </div>
+
+        <div class="indirecto">
+          <ul class="wrapper">
+            <li onclick="" class="icon facebook">
+              <span class="tooltip">t1</span>
+              <span><i class="fab fa-facebook-f"></i></span>
+            </li>
+            <li class="icon twitter">
+              <span class="tooltip">t2</span>
+              <span><i class="fab fa-twitter"></i></span>
+            </li>
+            <li class="icon instagram">
+              <span class="tooltip">t3</span>
+              <span><i class="fab fa-instagram"></i></span>
+            </li>
+          </ul>
+          <button class="funcion">INDIRECTO</button>
+        </div>
+
+        <div class="ejecucion">
+          <ul class="wrapper">
+            <li onclick="" class="icon facebook">
+              <span class="tooltip">t1</span>
+              <span><i class="fab fa-facebook-f"></i></span>
+            </li>
+            <li class="icon twitter">
+              <span class="tooltip">t2</span>
+            </li>
+            <li class="icon instagram">
+              <span class="tooltip">t3</span>
+              <span><i class="fab fa-instagram"></i></span>
+            </li>
+          </ul>
+          <button class="funcion">INTERRUPCION</button>
+        </div>
+      </div>
+      <div class="procesador-box">
+        <div class="cpu">
+          <div class="ALU">
+            <p>ALU</p>
+          </div>
+          <div class="PC">
+            <p id="pc">PC</p>
+            <img id="binary" src="/img/binary-code.png" alt="" />
+          </div>
+          <div class="IR">
+            <p>IR</p>
+          </div>
+
+          <div class="MBR">
+            <p>MBR</p>
+            <img id="mbr-binary" src="/img/binary-code.png" alt="" />
+          </div>
+          <div class="MAR">
+            <p id="marTitle">MAR</p>
+          </div>
+          <div class="UC">
+            <p id="">UC</p>
+          </div>
+          <img
+            class="img-cable"
+            src="img/usb-cable-usb-svgrepo-com.svg"
+            alt=""
+          />
+        </div>
+
+        <div class="buses">
+          <div class="direcciones">
+            <p>Direcciones</p>
+          </div>
+          <div class="datos">
+            <p>datos</p>
+          </div>
+          <div class="control">
+            <p>control</p>
+          </div>
+        </div>
+
+        <div class="memorias">
+          <div class="memoria">
+            <img id="binary-memorias" src="/img/binary-code.png" alt="" />
+            <p>Memoria</p>
+          </div>
+          <div class="partes-cpu">
+            <div class="mar">
+              <p>MAR</p>
+              <p id="mar-instruccion" class="mar-instruccion">00000110101</p>
+            </div>
+            <div class="mbr">
+              <p>MBR</p>
+              <p id="mbr-instruccion" class="mbr-instruccion">00000110101</p>
+            </div>
+            <div class="pc">
+              <p>PC</p>
+              <p id="pc-instruccion" class="pc-instruccion">00000110101</p>
+            </div>
+            <div class="ir">
+              <p>IR</p>
+              <p id="ir-instruccion" class="ir-instruccion">00000110101</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <script
+    src="https://kit.fontawesome.com/44658ca2d2.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    function lastStepCaptation() {
+
+      let irInstruccion = document.getElementById("ir-instruccion");
+      let mbrBinary = document.getElementById("mbr-binary");
+      let instruccion = document.getElementById("binary-memorias");
+
+      instruccion.style.display = "none";
+      mbrBinary.style.display = "block";
+      irInstruccion.style.display = "block";
+
+    }
+
+    function nextStepCaptation() {
+      let mbrInstruccion = document.getElementById("mbr-instruccion");
+      let instruccion = document.getElementById("binary-memorias");
+      let pcbinay = document.getElementById("binary");
+
+      pcbinay.style.display = "none";
+      instruccion.style.display = "block";
+      mbrInstruccion.style.display = "block";
+    }
+
+    function captacion() {
+      let pctitle = document.getElementById("pc");
+      let instruccion = document.getElementById("binary");
+      let pcInstruccion = document.getElementById("pc-instruccion");
+      let marInstruccion = document.getElementById("mar-instruccion");
+
+      instruccion.style.display = "block";
+      pc.style.position = "absolute";
+      pc.style.top = "0";
+      pcInstruccion.style.display = "block";
+      marInstruccion.style.display = "block";
+    }
+  </script>
+</html>
