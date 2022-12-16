@@ -10,77 +10,47 @@
   <body>
     <section class="proyecto">
       <div class="buttons">
-        <div class="captacion">
-          <ul class="wrapper">
-            <li onclick="nextStepCaptation()" class="icon facebook">
-              <span class="tooltip">t2</span>
-              <span>t2</span>
-            </li>
-            <li onclick="lastStepCaptation()" class="icon twitter">
-              <span class="tooltip">t3</span>
-              <span>t3</span>
-            </li>
-          </ul>
-          <button class="funcion" onclick="captacion()">CAPTACIÓN</button>
-        </div>
-
-        <div class="indirecto">
-          <ul class="wrapper">
-            <li onclick="" class="icon facebook">
-              <span class="tooltip">t1</span>
-              <span><i class="fab fa-facebook-f"></i></span>
-            </li>
-            <li class="icon twitter">
-              <span class="tooltip">t2</span>
-              <span><i class="fab fa-twitter"></i></span>
-            </li>
-            <li class="icon instagram">
-              <span class="tooltip">t3</span>
-              <span><i class="fab fa-instagram"></i></span>
-            </li>
-          </ul>
-          <button class="funcion">INDIRECTO</button>
+        <div class="input-instruccion">
+          <input id="input-intruccion" placeholder="instruccion" type="text">
         </div>
 
         <div class="ejecucion">
-          <ul class="wrapper">
-            <li onclick="" class="icon facebook">
-              <span class="tooltip">t1</span>
-              <span><i class="fab fa-facebook-f"></i></span>
-            </li>
-            <li class="icon twitter">
-              <span class="tooltip">t2</span>
-            </li>
-            <li class="icon instagram">
-              <span class="tooltip">t3</span>
-              <span><i class="fab fa-instagram"></i></span>
-            </li>
-          </ul>
-          <button class="funcion">INTERRUPCION</button>
+          <button  onclick="iniciar()" class="funcion">INICIAR</button>
         </div>
       </div>
       <div class="procesador-box">
         <div class="cpu">
           <div class="ALU">
             <p>ALU</p>
+            <span id="alu-text"></span>
           </div>
           <div class="PC">
             <p id="pc">PC</p>
-            <img id="binary" src="/img/binary-code.png" alt="" />
+            <span id="pc-text"></span>
+          </div>
+          <div class="AC">
+            <p id="ac">AC</p>
+            <span id="ac-text"></span>
+
           </div>
           <div class="IR">
             <p>IR</p>
+            <span id="ir-text"></span>
           </div>
 
           <div class="MBR">
             <p>MBR</p>
-            <img id="mbr-binary" src="/img/binary-code.png" alt="" />
+            <span id="mbr-text"></span>
           </div>
           <div class="MAR">
-            <p id="marTitle">MAR</p>
+            <p id="mar">MAR</p>
+            <span id="mar-text"></span>
+
           </div>
           <div class="UC">
             <p id="">UC</p>
+            <span id="uc-text"></span>
+
           </div>
           <img
             class="img-cable"
@@ -92,38 +62,45 @@
         <div class="buses">
           <div class="direcciones">
             <p>Direcciones</p>
+            <span id="bus-direcciones"></span>
+
           </div>
           <div class="datos">
             <p>datos</p>
+            <span id="bus-datos"></span>
+
           </div>
           <div class="control">
+            
             <p>control</p>
+            <span id="bus-control"></span>
           </div>
         </div>
 
         <div class="memorias">
           <div class="memoria">
-            <img id="binary-memorias" src="/img/binary-code.png" alt="" />
-            <p>Memoria</p>
+            <p>MEMORIA</p>
+            <ul>
+              <h2>Registro Resultados</h2>
+              <li id="0"></li>
+              <li id="1"></li>
+              <li id="2"></li>
+              <li id="3"></li>
+              <li id="4"></li>
+              <li id="5"></li>
+              <li id="6"></li>
+              <li id="7"></li>
+              <li id="8"></li>
+              <li id="9"></li>
+              <li id="10"></li>
+              <li id="11"></li>
+              <li id="12"></li>
+              <li id="13"></li>
+              <li id="14"></li>
+              <li id="15"></li>
+
+            </ul>
           </div>
-          <div class="partes-cpu">
-            <div class="mar">
-              <p>MAR</p>
-              <p id="mar-instruccion" class="mar-instruccion">00000110101</p>
-            </div>
-            <div class="mbr">
-              <p>MBR</p>
-              <p id="mbr-instruccion" class="mbr-instruccion">00000110101</p>
-            </div>
-            <div class="pc">
-              <p>PC</p>
-              <p id="pc-instruccion" class="pc-instruccion">00000110101</p>
-            </div>
-            <div class="ir">
-              <p>IR</p>
-              <p id="ir-instruccion" class="ir-instruccion">00000110101</p>
-            </div>
-            
           </div>
         </div>
       </div>
@@ -135,40 +112,5 @@
     crossorigin="anonymous"
   ></script>
 
-  <script>
-    function lastStepCaptation() {
-
-      let irInstruccion = document.getElementById("ir-instruccion");
-      let mbrBinary = document.getElementById("mbr-binary");
-      let instruccion = document.getElementById("binary-memorias");
-
-      instruccion.style.display = "none";
-      mbrBinary.style.display = "block";
-      irInstruccion.style.display = "block";
-
-    }
-
-    function nextStepCaptation() {
-      let mbrInstruccion = document.getElementById("mbr-instruccion");
-      let instruccion = document.getElementById("binary-memorias");
-      let pcbinay = document.getElementById("binary");
-
-      pcbinay.style.display = "none";
-      instruccion.style.display = "block";
-      mbrInstruccion.style.display = "block";
-    }
-
-    function captacion() {
-      let pctitle = document.getElementById("pc");
-      let instruccion = document.getElementById("binary");
-      let pcInstruccion = document.getElementById("pc-instruccion");
-      let marInstruccion = document.getElementById("mar-instruccion");
-
-      instruccion.style.display = "block";
-      pc.style.position = "absolute";
-      pc.style.top = "0";
-      pcInstruccion.style.display = "block";
-      marInstruccion.style.display = "block";
-    }
-  </script>
+  <script src="index.js"></script>
 </html>

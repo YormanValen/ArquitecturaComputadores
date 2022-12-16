@@ -24,7 +24,7 @@
 
 .procesador-box .cpu > div {
   display: flex;
-  
+  flex-direction: column;
 border-radius: 20%;
   border: 4px black solid;
   font-weight: 600;
@@ -34,8 +34,7 @@ border-radius: 20%;
   align-items: center;
   width: 100px;
   height: 100px;
-  background-color:  #616A6B;
-  ;
+  background-color:  #616A6B;;
   transition: .5s ease-in;
 
 }
@@ -151,48 +150,33 @@ transform: rotate(90deg);
 }
 
 .memorias {
-  display: flex;
-  gap: 20px;
-  flex-direction: column;
-  position: relative;
 }
 
 .memorias .memoria {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50%;
   font-size: 20px;
   color: white;
   font-weight: 600;
   background: #00814a;
 }
 
-.memorias img {
-  animation: t2 10s normal  1  forwards;
-    display: none;
-    width: 20%;
-    left: 10%;
-    position: absolute;
-  
+.memorias .memoria ul {
+  padding: 5%;
+  list-style: none;
+  border: 2px solid white;
 }
 
-@keyframes t2 {
-
-  0%{
-  }
-
-
-  50% {
-    transform: translateX(-230px);
-    z-index: 1;
-    }
-
-  100% {
-    transform: translate(-490px, 120px);
-    z-index: 1;
-  }
+.memorias .memoria ul li {
+  padding: 5%;
+  list-style: none;
+  border: 2px solid white;
 }
 
 .proyecto .memorias .partes-cpu {
